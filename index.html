@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generative AI Portfolio | Biologist & Researcher</title>
+  <style>
+    :root {
+      --bg-top: #f7f9fa;
+      --bg-body: #ffffff;
+      --bg-dark-nav: #282b30;
+      --bg-dark-nav-hover: #33373e;
+      --accent-cyan: #1eaedb;
+      --accent-cyan-hover: #0fa2cf;
+      --hero-bg: linear-gradient(135deg, #102d38 0%, #1a4958 50%, #0e242d 100%);
+      --text-dark: #2d3436;
+      --text-muted: #636e72;
+      --text-light: #ffffff;
+      --border-color: #e1e8ed;
+      --card-bg: #ffffff;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-circle: 50%;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-md: 0 6px 16px rgba(0,0,0,0.08);
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg-top: #15181c;
+      --bg-body: #1c2026;
+      --bg-dark-nav: #121417;
+      --bg-dark-nav-hover: #22262c;
+      --accent-cyan: #22c1f2;
+      --accent-cyan-hover: #4ad1fa;
+      --text-dark: #f1f2f6;
+      --text-muted: #a4b0be;
+      --border-color: #2f3542;
+      --card-bg: #22272e;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+      --shadow-md: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-main);
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Arcana Top Logo Header */
+    .top-header {
+      background-color: var(--bg-top);
+      text-align: center;
+      padding: 2.5rem 1rem 1.75rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .top-header h1 {
+      font-size: 1.85rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: var(--text-dark);
+    }
+
+    .top-header h1 strong {
+      font-weight: 700;
+    }
+
+    .top-header .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-top: 0.3rem;
+    }
+
+    /* Arcana Dark Navigation Bar */
+    .main-nav {
+      background-color: var(--bg-dark-nav);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ffffff;
+      background-color: var(--bg-dark-nav-hover);
+    }
+
+    /* Arcana active menu tab indicator */
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--accent-cyan);
+    }
+
+    .theme-toggle-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #ffffff;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      transition: background 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Arcana Hero Banner */
+    .hero-banner {
+      background: var(--hero-bg);
+      color: var(--text-light);
+      padding: 4.5rem 1.5rem 3.5rem 1.5rem;
+      text-align: center;
+      position: relative;
+      box-shadow: inset 0 -4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+      font-weight: 300;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-title strong {
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .hero-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .hero-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #ffffff;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Arcana Callout Bar */
+    .hero-callout {
+      background: rgba(15, 23, 30, 0.92);
+      color: #ffffff;
+      padding: 1.25rem 2rem;
+      margin-top: 3rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: left;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-callout-text {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .btn-arcana {
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      padding: 0.65rem 1.6rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      transition: background-color 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-arcana:hover {
+      background-color: var(--accent-cyan-hover);
+    }
+
+    /* Arcana Circular Features Grid */
+    .section-padding {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .section-title strong {
+      font-weight: 700;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .feature-item {
+      padding: 1rem;
+    }
+
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-circle);
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 10px rgba(30, 174, 219, 0.3);
+    }
+
+    .icon-circle svg {
+      width: 38px;
+      height: 38px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-item h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      color: var(--text-dark);
+    }
+
+    .feature-item p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Content Layout Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .arcana-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .bio-lead {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .bio-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .arcana-tag {
+      background-color: rgba(30, 174, 219, 0.1);
+      color: var(--accent-cyan);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 12px;
+      border: 1px solid rgba(30, 174, 219, 0.2);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-entry {
+      border-left: 3px solid var(--accent-cyan);
+      padding-left: 1rem;
+    }
+
+    .timeline-entry h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .timeline-meta {
+      font-size: 0.825rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* Submissions Layout */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.5rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background-color: var(--accent-cyan);
+      color: #ffffff;
+      border-color: var(--accent-cyan);
+    }
+
+    .submissions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .sub-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sub-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .sub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .module-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 12px;
+    }
+
+    .status-submitted {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    [data-theme="dark"] .status-submitted {
+      background-color: #064e3b;
+      color: #a7f3d0;
+    }
+
+    .status-inprogress {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    [data-theme="dark"] .status-inprogress {
+      background-color: #78350f;
+      color: #fde68a;
+    }
+
+    .status-upcoming {
+      background-color: var(--bg-top);
+      color: var(--text-muted);
+      border: 1px solid var(--border-color);
+    }
+
+    .sub-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .sub-desc {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .sub-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .deliverable-note {
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: none;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg-top);
+      color: var(--text-dark);
+    }
+
+    .btn-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: var(--bg-top);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    /* Footer & Citation */
+    footer {
+      background-color: var(--bg-dark-nav);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 3rem 0 2rem 0;
+      font-size: 0.875rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-brand strong {
+      color: #ffffff;
+    }
+
+    .citation-box {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .citation-box a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .citation-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 1.75rem;
+      }
+      .hero-callout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .citation-box {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Arcana Top Logo Header -->
+  <header class="top-header">
+    <div class="container">
+      <h1><strong>Generative AI</strong> Portfolio</h1>
+      <div class="subtitle">Biologist & Research Professional &bull; Teton County, WY</div>
+    </div>
+  </header>
+
+  <!-- Arcana Navigation Bar -->
+  <nav class="main-nav">
+    <div class="container nav-inner">
+      <ul class="nav-links">
+        <li><a href="#about-me" class="active">About Me</a></li>
+        <li><a href="#about-course">About Course</a></li>
+        <li><a href="#submissions">Submissions</a></li>
+      </ul>
+      <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        🌙 Dark
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Arcana Style Hero Banner -->
+    <section class="hero-banner">
+      <div class="container hero-content">
+        <h2 class="hero-title">
+          Bridging <strong>Biological Research</strong> &amp; Responsible <strong>Artificial Intelligence</strong>
+        </h2>
+        <p class="hero-subtitle">
+          Demonstrates practical, no-code AI tools for task automation, reproducible scientific research, and data analysis in environmental and vector surveillance.
+        </p>
+        
+        <div class="hero-pills">
+          <span class="hero-pill">📍 Jackson, Wyoming</span>
+          <span class="hero-pill">🧬 Teton County Weed &amp; Pest District</span>
+          <span class="hero-pill">🎓 The GRAPH Courses / Univ. of Geneva</span>
+        </div>
+
+        <!-- Arcana Hero Callout Strip -->
+        <div class="hero-callout">
+          <div class="hero-callout-text">
+            <strong>Generative AI for Work &amp; Research:</strong> An 8-Week Applied Cohort Course
+          </div>
+          <a href="#submissions" class="btn-arcana">Explore Submissions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arcana Circular Features Highlights -->
+    <section class="section-padding" style="background-color: var(--bg-top);">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Course <strong>Learning Pillars</strong></h2>
+          <p class="section-desc">Key methodology and practical frameworks mastered throughout the program</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="icon-circle">
+              <!-- SVG Icon 1: Workshops -->
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <h3>Live Workshops</h3>
+            <p>Interactive cohort exercises, real-time code-alongs, and whole-class instruction.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-circle">
+              <!-- SVG Icon 2: Responsible AI -->
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Responsible Practice</h3>
+            <p>Systematic verification, hallucination mitigation, context windows, and privacy defense.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-circle">
+              <!-- SVG Icon 3: Prework -->
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3>Applied Prework</h3>
+            <p>Hands-on task automation, prompt engineering, and qualitative literature extraction.</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="icon-circle">
+              <!-- SVG Icon 4: Capstone -->
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <h3>Capstone Project</h3>
+            <p>Designing tailored AI tools to solve real-world biological management challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about-me" class="section-padding">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">About <strong>Me</strong></h2>
+          <p class="section-desc">Biologist & Program Coordinator with 10+ years research experience</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="arcana-card">
+            <p class="bio-lead">
+              Broadly trained MSc biologist with a passion for scientific integrity
+            </p>
+            <p class="bio-text">
+              Over 15 years of industry and academic research experience ranging from behavioral ecology to molecular genetics to vector surveillance
+            </p>
+            <h4 style="font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; color: var(--text-dark);">Core Expertise</h4>
+            <div class="tag-container">
+              <span class="arcana-tag">Molecular Genetics &amp; qPCR</span>
+              <span class="arcana-tag">Vector Surveillance</span>
+              <span class="arcana-tag">Pathogen Detection</span>
+              <span class="arcana-tag">Science Communication</span>
+            </div>
+          </div>
+
+          <div class="arcana-card">
+            <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1.25rem;">Experience &amp; Education</h3>
+            <div class="timeline">
+              <div class="timeline-entry">
+                <h4>Biologist </h4>
+                <div class="timeline-meta">Teton County Weed &amp; Pest District | Feb 2023 – Present</div>
+                <div class="timeline-desc">
+                  Coordinates pathogen detection assay development, Snake River EDRR operations, and vector management.
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <h4>Research Associate II</h4>
+                <div class="timeline-meta">Second Genome Inc. | Protein Science Dept</div>
+                <div class="timeline-desc">
+                  Laboratory experimentation and protein analysis supporting microbiome-based therapeutics.
+                </div>
+              </div>
+
+              <div class="timeline-entry">
+                <h4>Master of Science (MSc) – Applied Biology</h4>
+                <div class="timeline-meta">Salisbury University | Ecology &amp; Genetics</div>
+                <div class="timeline-desc">
+                  Specialized in amphibian ecology, mate choice, and behavioral genetics. Standardized experimentation protocols and mentored research assistants.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Course Section -->
+    <section id="about-course" class="section-padding" style="background-color: var(--bg-top);">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">About <strong>The Course</strong></h2>
+          <p class="section-desc">Offered by The GRAPH Courses in partnership with researchers based at Univ. of Geneva</p>
+        </div>
+
+        <div class="arcana-card" style="max-width: 900px; margin: 0 auto;">
+          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-dark);">
+            Generative AI for Work &amp; Research: No-Code AI Tools for Responsible Task Automation
+          </h3>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            An intensive 8-week cohort-based bootcamp focusing on practical, responsible application of artificial intelligence in scientific research, workflow automation, custom chatbot design, and quantitative data analysis.
+          </p>
+
+          <div class="grid-2" style="gap: 1.5rem;">
+            <div style="background: var(--bg-top); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--text-dark); display: block; margin-bottom: 0.25rem;">Academic Rigor</strong>
+              <p style="font-size: 0.875rem; color: var(--text-muted);">Backing from academic institutions including University of Geneva, Swiss School of Public Health, and World Health Organization partners.</p>
+            </div>
+            <div style="background: var(--bg-top); padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <strong style="color: var(--text-dark); display: block; margin-bottom: 0.25rem;">Portfolio-Driven</strong>
+              <p style="font-size: 0.875rem; color: var(--text-muted);">Weekly applied deliverables designed to build a real-world portfolio of task automations and research tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Submissions Section -->
+    <section id="submissions" class="section-padding">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Weekly <strong>Submissions</strong></h2>
+          <p class="section-desc">Course deliverables and module assignments</p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" onclick="filterSubmissions('all', this)">All Modules</button>
+          <button class="filter-btn" onclick="filterSubmissions('submitted', this)">Submitted</button>
+          <button class="filter-btn" onclick="filterSubmissions('in-progress', this)">In Progress</button>
+        </div>
+
+        <div class="submissions-grid" id="submissionsGrid">
+          
+          <!-- Module 1 -->
+          <article class="sub-card" data-status="submitted">
+            <div class="sub-header">
+              <span class="module-badge">Module 01</span>
+              <span class="status-pill status-submitted">✓ Submitted</span>
+            </div>
+            <h3 class="sub-title">Documents, Presentations &amp; Websites</h3>
+            <p class="sub-desc">
+              Understanding next token prediction, prompt engineering principles for DOCX/PPTX/HTML deliverables, building simple research websites, and avoiding AI slop.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Course Portfolio Website</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-1')">Copy Link</button>
+                <a href="#" class="btn-sm btn-arcana">View Project</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 2 -->
+          <article class="sub-card" data-status="in-progress">
+            <div class="sub-header">
+              <span class="module-badge">Module 02</span>
+              <span class="status-pill status-inprogress">⏳ In Progress</span>
+            </div>
+            <h3 class="sub-title">AI-Automated Data Analysis</h3>
+            <p class="sub-desc">
+              Applying built-in data agents (ChatGPT/Gemini/Claude) and REPL loops for quick quantitative analysis, spreadsheet manipulation, and spotting statistical hallucinations.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Vector Data Analysis Script</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-2')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Pending Link</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 3 -->
+          <article class="sub-card" data-status="upcoming">
+            <div class="sub-header">
+              <span class="module-badge">Module 03</span>
+              <span class="status-pill status-upcoming">Upcoming</span>
+            </div>
+            <h3 class="sub-title">GenAI for Text Processing &amp; Research</h3>
+            <p class="sub-desc">
+              Processing structured data from unstructured research papers, automated literature reviews with tools like Elicit, calling LLM APIs, and qualitative text analysis.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Literature Extraction Digest</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-3')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Placeholder</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 4 -->
+          <article class="sub-card" data-status="upcoming">
+            <div class="sub-header">
+              <span class="module-badge">Module 04</span>
+              <span class="status-pill status-upcoming">Upcoming</span>
+            </div>
+            <h3 class="sub-title">Custom GPTs and Chatbots</h3>
+            <p class="sub-desc">
+              Designing custom chatbots with tailored knowledge bases, context engineering, RAG, custom GPTs for internal workflows, and prompt injection defense.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Invasive Species Identification Assistant</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-4')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Placeholder</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 5 -->
+          <article class="sub-card" data-status="upcoming">
+            <div class="sub-header">
+              <span class="module-badge">Module 05</span>
+              <span class="status-pill status-upcoming">Upcoming</span>
+            </div>
+            <h3 class="sub-title">AI Tools for Task Automation</h3>
+            <p class="sub-desc">
+              Combining LLMs with classic automation workflows, action-based triggers, research digests, browser control agents, and human-in-the-loop validation.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: EDRR Automated Alert Digest</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-5')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Placeholder</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 6 -->
+          <article class="sub-card" data-status="upcoming">
+            <div class="sub-header">
+              <span class="module-badge">Module 06</span>
+              <span class="status-pill status-upcoming">Upcoming</span>
+            </div>
+            <h3 class="sub-title">GenAI for Communication &amp; Outreach</h3>
+            <p class="sub-desc">
+              Creating visual abstracts, scientific diagrams, SVG graphics, and educational video translation (HeyGen/Runway) while navigating ethical limits.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Public Outreach Infographic</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-6')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Placeholder</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Module 7 -->
+          <article class="sub-card" data-status="upcoming">
+            <div class="sub-header">
+              <span class="module-badge">Module 07</span>
+              <span class="status-pill status-upcoming">Upcoming</span>
+            </div>
+            <h3 class="sub-title">Capstone Project &amp; Showcase</h3>
+            <p class="sub-desc">
+              Final AI solution synthesis, peer feedback, live project demo, and reflection on responsible AI integration in biological management.
+            </p>
+            <div class="sub-footer">
+              <span class="deliverable-note">Deliverable: Capstone Showcase Presentation</span>
+              <div class="action-group">
+                <button class="btn-sm btn-outline" onclick="copyLink('#module-7')">Copy Link</button>
+                <a href="#" class="btn-sm btn-disabled" onclick="event.preventDefault();">Placeholder</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Arcana Footer & Citation -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <strong>Generative AI for Work &amp; Research</strong> Portfolio
+        <div style="font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem;">
+          Teton County Weed &amp; Pest District &bull; Jackson, WY
+        </div>
+      </div>
+
+      <!-- Theme Citation Credit -->
+      <div class="citation-box">
+        Theme design inspired by <a href="https://themes.gohugo.io/themes/hugo-arcana/" target="_blank" rel="noopener"><strong>Arcana</strong></a><br>
+        Originally by <strong>HTML5 UP</strong> &bull; Hugo Port by <strong>Trevor Bergeron</strong><br>
+        Licensed under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Switcher Logic
+    function toggleTheme() {
+      const html = document.documentElement;
+      const themeBtn = document.getElementById('themeToggle');
+      
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+        themeBtn.textContent = '🌙 Dark';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        themeBtn.textContent = '☀️ Light';
+      }
+    }
+
+    // Filter Submissions
+    function filterSubmissions(status, buttonEl) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      buttonEl.classList.add('active');
+
+      const cards = document.querySelectorAll('.sub-card');
+      cards.forEach(card => {
+        const cardStatus = card.getAttribute('data-status');
+        if (status === 'all' || cardStatus === status) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Copy Helper Link
+    function copyLink(anchor) {
+      const dummyUrl = window.location.origin + window.location.pathname + anchor;
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = dummyUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        toastMessage('Link copied to clipboard: ' + anchor);
+      } catch (err) {
+        console.error('Copy failed', err);
+      }
+      
+      document.body.removeChild(textArea);
+    }
+
+    // Toast Notification
+    function toastMessage(msg) {
+      const toast = document.createElement('div');
+      toast.textContent = msg;
+      toast.style.position = 'fixed';
+      toast.style.bottom = '20px';
+      toast.style.right = '20px';
+      toast.style.backgroundColor = 'var(--bg-dark-nav)';
+      toast.style.color = '#ffffff';
+      toast.style.padding = '0.75rem 1.25rem';
+      toast.style.borderRadius = '6px';
+      toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
+      toast.style.zIndex = '1000';
+      toast.style.fontSize = '0.875rem';
+      toast.style.border = '1px solid var(--accent-cyan)';
+      
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.3s ease';
+        setTimeout(() => document.body.removeChild(toast), 300);
+      }, 2500);
+    }
+
+    // Active navigation item highlighter on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+        const navLink = document.querySelector(`.nav-links a[href*=${sectionId}]`);
+
+        if (navLink) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+            navLink.classList.add('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
