@@ -64,9 +64,26 @@
     /* Arcana Top Logo Header */
     .top-header {
       background-color: var(--bg-top);
-      text-align: center;
-      padding: 2.5rem 1rem 1.75rem 1rem;
+      padding: 2.25rem 1rem 1.75rem 1rem;
       border-bottom: 1px solid var(--border-color);
+    }
+
+    .top-header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      gap: 1.5rem;
+    }
+
+    .header-avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-cyan);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
     }
 
     .top-header h1 {
@@ -592,6 +609,13 @@
       .grid-2 {
         grid-template-columns: 1fr;
       }
+      .top-header-inner {
+        gap: 1rem;
+      }
+      .header-avatar {
+        width: 70px;
+        height: 70px;
+      }
       .hero-title {
         font-size: 1.75rem;
       }
@@ -613,9 +637,14 @@
 
   <!-- Arcana Top Logo Header -->
   <header class="top-header">
-    <div class="container">
-      <h1><strong>Generative AI</strong> Portfolio</h1>
-      <div class="subtitle">Biologist & Research Professional &bull; Teton County, WY</div>
+    <div class="container top-header-inner">
+      <div class="header-text">
+        <h1><strong>Generative AI</strong> Portfolio</h1>
+        <div class="subtitle">Biologist & Research Professional &bull; Teton County, WY</div>
+      </div>
+      <div class="header-avatar-wrap">
+        <img src="https://github.com/kmitchtcwp/GRAPH-GenAI-Portfolio/blob/main/NAISMA%202024%20presentation.jpg?raw=true" alt="Profile Avatar" class="header-avatar" onerror="this.src='https://placehold.co/100x100/1eaedb/ffffff?text=Bio';">
+      </div>
     </div>
   </header>
 
