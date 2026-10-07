@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -930,7 +931,7 @@
           <article class="submission-card">
             <div class="sub-card-header sub-header-m2">
               <span class="mod-badge">Module 02</span>
-              <span class="status-tag status-pending">In Progress</span>
+              <span class="status-tag status-completed">Completed</span>
             </div>
             <div class="sub-card-body">
               <div>
@@ -940,8 +941,8 @@
                 </p>
               </div>
               <div class="sub-footer">
-                <span class="deliverable-info">Deliverable: Data Workflow</span>
-                <a href="#" class="btn-sub btn-placeholder" onclick="event.preventDefault();">Placeholder</a>
+                <span class="deliverable-info">Deliverable: Workshop 2: Automated Data Analysis</span>
+                <a href="https://github.com/kmitchtcwp/GRAPH-GenAI-Portfolio/blob/main/GenAI%20CourseWorkshop%202_Data%20Analysis.pdf" target="_blank" rel="noopener noreferrer" class="btn-sub">View Submission</a>
               </div>
             </div>
           </article>
@@ -1034,13 +1035,13 @@
             </div>
             <div class="sub-card-body">
               <div>
-                <h3 class="sub-title">Capstone Project &amp; Showcase</h3>
+                <h3 class="sub-title">Capstone Project</h3>
                 <p class="sub-topics">
-                  Final AI solution synthesis, peer review, live project presentation, and demonstrating responsible AI practice in biological management.
+                  Integration of course tools into a unified, production-ready AI workflow or assistant for professional research and vector management tasks.
                 </p>
               </div>
               <div class="sub-footer">
-                <span class="deliverable-info">Deliverable: Capstone Showcase</span>
+                <span class="deliverable-info">Deliverable: Capstone Report</span>
                 <a href="#" class="btn-sub btn-placeholder" onclick="event.preventDefault();">Placeholder</a>
               </div>
             </div>
@@ -1052,37 +1053,36 @@
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong style="color: var(--dark-navy); font-size: 1rem;">Generative AI Portfolio</strong>
-        <p style="margin-top: 0.3rem;">Teton County Weed &amp; Pest District &bull; Jackson, WY</p>
-        <p style="margin-top: 0.75rem;">&copy; 2026 | Built with HTML &amp; Custom CSS</p>
-      </div>
-
-      <!-- FeelIt Theme Citation -->
-      <div class="citation-box">
-        <div class="citation-title">
-          <span>🎨</span> Theme Inspiration &amp; Citation
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p style="font-weight: 700; color: var(--dark-navy); margin-bottom: 0.3rem;">Generative AI Portfolio</p>
+          <p>Created as part of The GRAPH Courses bootcamp hosted by the University of Geneva.</p>
         </div>
-        <p>
-          Design layout inspired by <a href="https://themes.gohugo.io/themes/feelit/" target="_blank" rel="noopener">FeelIt</a> — <em>A Clean, Elegant but Advanced Hugo Theme</em> created by <strong>Khusika</strong> under the <strong>MIT License</strong>.
-        </p>
+        <div class="citation-box">
+          <div class="citation-title">
+            <span>🔗 Portfolio Repository</span>
+          </div>
+          Hosted via GitHub Pages. View source files and project history on <a href="https://github.com/kmitchtcwp/GRAPH-GenAI-Portfolio" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
     function toggleTheme() {
-      const body = document.documentElement;
+      const html = document.documentElement;
       const themeBtn = document.getElementById('themeBtn');
-      if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
         themeBtn.textContent = '🌙 Dark';
       } else {
-        body.setAttribute('data-theme', 'dark');
+        html.setAttribute('data-theme', 'dark');
         themeBtn.textContent = '☀️ Light';
       }
     }
   </script>
 </body>
 </html>
+
+```
